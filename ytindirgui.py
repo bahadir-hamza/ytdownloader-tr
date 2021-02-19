@@ -1,3 +1,4 @@
+__author__ = "Bahadır Hamza Öztürk"
 from tkinter import *
 import tkinter.messagebox
 from tkinter import ttk
