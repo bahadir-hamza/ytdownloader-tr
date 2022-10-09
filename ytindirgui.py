@@ -1,11 +1,9 @@
 __author__ = "Bahadır Hamza Öztürk"
 
 from tkinter import *
-import tkinter.messagebox
 from tkinter import ttk, messagebox
 from tkinter import filedialog
 from pytube import YouTube
-from moviepy.editor import *
 
 Folder_Name = ""
 
