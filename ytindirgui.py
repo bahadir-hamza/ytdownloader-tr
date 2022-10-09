@@ -2,7 +2,7 @@ __author__ = "Bahadır Hamza Öztürk"
 
 from tkinter import *
 import tkinter.messagebox
-from tkinter import ttk
+from tkinter import ttk, messagebox
 from tkinter import filedialog
 from pytube import YouTube
 from moviepy.editor import *
@@ -26,7 +26,7 @@ def DownloadVideo():
     url = ytdEntry.get()
 
     if (len(url) > 1):
-        ytdError.config(text="İndiriliyor...")
+        ytdError.config(text="Hata")
         yt = YouTube(url)
 
         if choice == choices[0]:
@@ -41,7 +41,10 @@ def DownloadVideo():
         if snd == 1:
             select.download(Folder_Name, filename=yt.streams[0].title +".mp3")
         else:
-            select.download(Folder_Name)
+            try:
+                select.download(Folder_Name)
+            except:
+                messagebox.showinfo("Hata", "Seçtiğiniz çözünürlük desteklenmiyor olabilir")
     ytdError.config(text="İndirme Tamamlandı!!1")
 
 
